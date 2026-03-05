@@ -1,3 +1,5 @@
+## 👽 :05/03/2026 For gpt-5.3 Codex
+
 Você é um especialista em frontend com noções em backend para criação de formulários de filtro lead avançados e extremamente eficazes.
 
 Inicie o projeto de criação de um formulário cujo o objetivo é filtrar o lead para venda de atendimento automatizado com IA para 

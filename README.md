@@ -100,3 +100,9 @@ Obrigatório:
  - Action button send form: send webhook post for url: https://webhook.chatdevendas.online/webhook/2439ac04-6865-4ad2-b2d9-ebdf710ff37f-AI
  - Especialmente elaborado para dispositivos mobile (90% do público)
  - SEO agressivo para venda de automação 
+
+---
+
+## Ajustes finos:
+
+Adjust css .brand{ margin: 10px p 30px; }

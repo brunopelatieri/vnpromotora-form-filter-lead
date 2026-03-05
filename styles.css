@@ -1,0 +1,290 @@
+:root {
+  --green: #00963f;
+  --green-dark: #067f38;
+  --blue: #014b80;
+  --text: #123042;
+  --muted: #6d7480;
+  --bg-light: #eef5fb;
+  --card: #ffffff;
+  --radius: 16px;
+  --shadow: 0 10px 32px rgba(0, 44, 80, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(165deg, #f7fbff 0%, #edf5fc 55%, #d5e6f4 100%);
+  color: var(--text);
+}
+
+.app {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 16px 14px 24px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 10px;
+}
+
+.brand img {
+  width: min(85vw, 280px);
+  height: auto;
+}
+
+.step {
+  display: none;
+  flex: 1;
+}
+
+.step.active {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.step-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  box-shadow: var(--shadow);
+}
+
+.step-card h1,
+.step-card h2 {
+  margin: 0 0 12px;
+  line-height: 1.25;
+  color: var(--blue);
+}
+
+.step-card h1 {
+  font-size: clamp(1.3rem, 2.8vw, 1.6rem);
+}
+
+.step-card h2 {
+  font-size: clamp(1.2rem, 2.7vw, 1.5rem);
+}
+
+.step-card h2 span {
+  color: #e30000;
+}
+
+.step-card p {
+  margin: 0 0 12px;
+  color: #3b4550;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.warning-card {
+  border: 2px solid #ffcd4f;
+  background: linear-gradient(180deg, #fffdf5 0%, #fffaf0 100%);
+}
+
+.warning-card ul {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+}
+
+.warning-card li {
+  color: #2f3d4a;
+  line-height: 1.4;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #b7c2ce;
+  font-size: 1.1rem;
+  padding: 10px 2px;
+  color: var(--text);
+  background: transparent;
+  outline: none;
+}
+
+input:focus {
+  border-bottom-color: var(--blue);
+}
+
+.iti {
+  width: 100%;
+}
+
+.card-green {
+  background: var(--green);
+}
+
+.card-green h2,
+.card-green p,
+.card-green label {
+  color: #fff;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.radio-group label {
+  font-size: 1.05rem;
+  line-height: 1.35;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.radio-group input[type="radio"] {
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  accent-color: #0f61ff;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-next,
+.btn-submit,
+.btn-whatsapp {
+  background: var(--green);
+  color: #fff;
+}
+
+.btn-next:hover,
+.btn-submit:hover,
+.btn-whatsapp:hover {
+  background: var(--green-dark);
+}
+
+.btn-back {
+  background: #d4deea;
+  color: #123a55;
+}
+
+.btn-next,
+.btn-back {
+  min-width: 56px;
+}
+
+.btn-submit {
+  margin-left: auto;
+}
+
+.error {
+  display: block;
+  min-height: 18px;
+  margin-top: 8px;
+  font-size: 0.88rem;
+  color: #ffd9d9;
+}
+
+.step-card:not(.card-green) .error {
+  color: #d70000;
+}
+
+.result {
+  background: linear-gradient(130deg, #d6e5f4 0%, #d0e0ef 55%, #e3edf6 100%);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 34px 24px;
+  margin-top: 10px;
+}
+
+.result h2 {
+  color: var(--blue);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 12px;
+}
+
+.result h3 {
+  margin: 0 0 18px;
+  font-size: clamp(1.7rem, 4vw, 2.8rem);
+  line-height: 1.25;
+  color: var(--blue);
+}
+
+.result p {
+  margin: 0 0 6px;
+  font-size: 1.18rem;
+  line-height: 1.35;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.whatsapp-icon {
+  display: block;
+  width: fit-content;
+  font-size: 56px;
+  line-height: 1;
+  margin: 26px auto 18px;
+  text-decoration: none;
+}
+
+.btn-whatsapp {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  width: min(100%, 220px);
+  margin: 0 auto;
+  letter-spacing: 1px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .app {
+    padding: 20px 18px 34px;
+  }
+
+  .step-card {
+    padding: 24px 24px;
+  }
+
+  .step-card h2 {
+    font-size: 2rem;
+  }
+
+  .step-card p,
+  .radio-group label {
+    font-size: 1.35rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    font-size: 1.55rem;
+  }
+
+  .actions {
+    justify-content: flex-end;
+  }
+}

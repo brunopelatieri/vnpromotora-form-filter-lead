@@ -106,3 +106,12 @@ Obrigatório:
 ## Ajustes finos:
 
 Adjust css .brand{ margin: 10px p 30px; }
+
+Apply model Button-style radio buttons large. Reference image: reference-button-style-radio-buttons.png
+
+Adjust css .radio-group { gap: 20px; }
+
+Adjust css .step-card h1, .step-card h2 { margin: 0 0 18px; }
+
+When a radio button is selected, it automatically goes to the next question.
+

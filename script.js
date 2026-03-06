@@ -209,6 +209,22 @@ form.addEventListener("click", (event) => {
   }
 });
 
+form.addEventListener("change", (event) => {
+  const target = event.target;
+  if (!(target instanceof HTMLInputElement)) return;
+  if (target.type !== "radio") return;
+
+  const stepElement = target.closest(".step");
+  if (!stepElement || !stepElement.classList.contains("active")) return;
+
+  // Radios vivem nas etapas 4 a 8, avançando automaticamente ao selecionar.
+  if (activeStep >= 4 && activeStep <= 8) {
+    window.setTimeout(() => {
+      nextStep();
+    }, 120);
+  }
+});
+
 cpfInput.addEventListener("input", () => {
   cpfInput.value = maskCPF(cpfInput.value);
 });

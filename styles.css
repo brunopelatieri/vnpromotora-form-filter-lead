@@ -61,7 +61,7 @@ body {
 
 .step-card h1,
 .step-card h2 {
-  margin: 0 0 12px;
+  margin: 0 0 18px;
   line-height: 1.25;
   color: var(--blue);
 }
@@ -136,23 +136,76 @@ input:focus {
 .radio-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 20px;
+  counter-reset: option;
 }
 
 .radio-group label {
-  font-size: 1.05rem;
+  position: relative;
+  counter-increment: option;
+  font-size: 1.1rem;
+  font-weight: 500;
   line-height: 1.35;
   cursor: pointer;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  display: block;
+  border: 2px solid #b8c2cb;
+  border-radius: 9px;
+  background: #eef2f5;
+  color: #67707a;
+  padding: 14px 14px 14px 62px;
+  transition: all 0.2s ease;
+}
+
+.radio-group label::before {
+  content: counter(option, upper-alpha);
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border: 1px solid #9ea8b2;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #6b7783;
+  background: #f5f8fb;
 }
 
 .radio-group input[type="radio"] {
-  margin-top: 4px;
-  width: 18px;
-  height: 18px;
-  accent-color: #0f61ff;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.radio-group label:hover {
+  border-color: #8f9aa5;
+  background: #e8edf2;
+}
+
+.radio-group label:has(input[type="radio"]:checked) {
+  border-color: #0c8f40;
+  background: #e5f4eb;
+  color: #1a4d2f;
+  box-shadow: 0 0 0 2px rgba(0, 150, 63, 0.16);
+}
+
+.radio-group label:has(input[type="radio"]:checked)::before {
+  border-color: #0a8642;
+  background: #00963f;
+  color: #ffffff;
+}
+
+.radio-group label:has(input[type="radio"]:focus-visible) {
+  outline: 3px solid rgba(15, 97, 255, 0.35);
+  outline-offset: 2px;
+}
+
+.card-green .radio-group label {
+  background: #f0f3f6;
+  color: #65707b;
 }
 
 .actions {
@@ -276,6 +329,18 @@ input:focus {
   .step-card p,
   .radio-group label {
     font-size: 1.35rem;
+  }
+
+  .radio-group label {
+    padding: 18px 18px 18px 72px;
+    border-radius: 11px;
+  }
+
+  .radio-group label::before {
+    left: 18px;
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
   }
 
   input[type="text"],
